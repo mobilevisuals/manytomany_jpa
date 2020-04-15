@@ -23,7 +23,8 @@ public class Author implements Serializable {
     private Long id;
     private String name;
     private String country;
-    //mappedBy pekar på den som äger, alltså books-listan. Book är då den ägande klassen.
+    //mappedBy pekar på den som äger, alltså Book-klassen.
+    //I Book finns authors-listan, som länkar ihop dem.
     @ManyToMany(cascade=PERSIST,mappedBy="authors")
     //authors: List för tabellen på andra sidan många-till-många förhållandet
     private List<Book> books;
